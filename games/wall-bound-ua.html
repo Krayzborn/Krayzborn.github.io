@@ -24,6 +24,19 @@
         .game-content li { margin-bottom: 0.8rem; font-size: 1.05em; line-height: 1.6; color: var(--text-secondary); padding-left: 1.5rem; position: relative; }
         .game-content li::before { content: "•"; color: var(--accent); font-weight: bold; position: absolute; left: 0; font-size: 1.2em; line-height: 1.4; }
         .game-content strong { color: var(--text-primary); font-weight: 600; }
+
+        /* === GAME INFO (карточки) === */
+        .game-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        .meta-item { background: var(--bg-hover); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; text-align: center; transition: border-color 0.3s; }
+        .meta-item:hover { border-color: var(--accent); }
+        .meta-label { display: block; color: var(--text-secondary); font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
+        .meta-value { color: #FFFFFF; font-weight: 600; font-size: 1.05em; }
+
+        /* === Теги-пилюли === */
+        .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); color: var(--accent); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9em; font-weight: 500; transition: all 0.3s; }
+        .tag:hover { background: rgba(0, 212, 255, 0.2); }
+
         .game-links { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
         .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2.5rem; background: var(--accent); color: #121212; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; font-weight: 700; font-size: 1.1em; letter-spacing: 0.5px; }
         .btn:hover { background: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2); }
@@ -76,13 +89,37 @@
                     <li><strong>100% безкоштовно:</strong> Ідеально для швидких сесій або довгих сходжень</li>
                 </ul>
                 
-                <h2>Технічні деталі</h2>
-                <ul>
-                    <li><strong>Двигун:</strong> Unity</li>
-                    <li><strong>Мова:</strong> C#</li>
-                    <li><strong>Жанр:</strong> 2D платформер / Авторанер</li>
-                    <li><strong>Рік:</strong> 2026</li>
-                </ul>
+                <h2>Інформація про гру</h2>
+                <div class="game-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Жанр</span>
+                        <span class="meta-value">2D платформер</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Двигун</span>
+                        <span class="meta-value">Unity</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Платформа</span>
+                        <span class="meta-value">Android</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Реліз</span>
+                        <span class="meta-value">2026</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Ціна</span>
+                        <span class="meta-value">Безкоштовно</span>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Аркада</span>
+                    <span class="tag">Авторанер</span>
+                    <span class="tag">Один дотик</span>
+                    <span class="tag">Казуальна</span>
+                    <span class="tag">Офлайн</span>
+                    <span class="tag">Піксель-арт</span>
+                </div>
                 
                 <div class="game-links" style="justify-content: center; margin-top: 3rem;">
                     <a href="https://pixelpicked.com/game/4l0tJKDpICw/wall-bound-pixel-dash/" class="btn" target="_blank">Переглянути на PixelPicked</a>
