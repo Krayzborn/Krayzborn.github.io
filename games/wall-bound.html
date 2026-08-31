@@ -6,7 +6,6 @@
     <title>Wall Bound: Pixel Dash - Krayzborn</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* === PREMIUM DARK THEME === */
         :root {
             --bg-primary: #121212;
             --bg-card: #1E1E1E;
@@ -113,6 +112,64 @@
         }
         
         .game-content strong { color: var(--text-primary); font-weight: 600; }
+
+        /* === GAME INFO (карточки) === */
+        .game-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta-item {
+            background: var(--bg-hover);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .meta-item:hover {
+            border-color: var(--accent);
+        }
+
+        .meta-label {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .meta-value {
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+        /* === Теги-пилюли === */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .tag {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            background: rgba(0, 212, 255, 0.2);
+        }
         
         .game-links { 
             margin-top: 2.5rem; 
@@ -208,13 +265,37 @@
                     <li><strong>100% Free:</strong> Perfect for quick sessions or long summit pushes</li>
                 </ul>
                 
-                <h2>Technical Details</h2>
-                <ul>
-                    <li><strong>Engine:</strong> Unity</li>
-                    <li><strong>Language:</strong> C#</li>
-                    <li><strong>Genre:</strong> 2D Platformer / Auto-Runner</li>
-                    <li><strong>Year:</strong> 2026</li>
-                </ul>
+                <h2>Game Info</h2>
+                <div class="game-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Genre</span>
+                        <span class="meta-value">2D Platformer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Engine</span>
+                        <span class="meta-value">Unity</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Platform</span>
+                        <span class="meta-value">Android</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Release</span>
+                        <span class="meta-value">2026</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Price</span>
+                        <span class="meta-value">Free</span>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Arcade</span>
+                    <span class="tag">Auto-Runner</span>
+                    <span class="tag">One-Tap</span>
+                    <span class="tag">Casual</span>
+                    <span class="tag">Offline</span>
+                    <span class="tag">Pixel Art</span>
+                </div>
                 
                 <div class="game-links" style="justify-content: center; margin-top: 3rem;">
                     <a href="https://pixelpicked.com/game/4l0tJKDpICw/wall-bound-pixel-dash/" class="btn" target="_blank">View on PixelPicked</a>
