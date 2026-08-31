@@ -8,12 +8,12 @@
     <style>
         /* === PREMIUM DARK THEME === */
         :root {
-            --bg-primary: #121212;       /* Глибокий чорний (як у Steam/Itch.io) */
-            --bg-card: #1E1E1E;          /* Світліший сірий для карток */
-            --bg-hover: #2D2D2D;         /* Для ховер-ефектів */
-            --text-primary: #E0E0E0;     /* М'який білий для тексту */
-            --text-secondary: #A0A0A0;   /* Сірий для другорядного тексту */
-            --accent: #00D4FF;           /* Яскравий акцент (бірюзовий) */
+            --bg-primary: #121212;
+            --bg-card: #1E1E1E;
+            --bg-hover: #2D2D2D;
+            --text-primary: #E0E0E0;
+            --text-secondary: #A0A0A0;
+            --accent: #00D4FF;
             --accent-hover: #33DDFF;
             --border: #333333;
         }
@@ -36,9 +36,7 @@
             transition: color 0.3s;
         }
         
-        .back-link:hover { 
-            color: var(--accent); 
-        }
+        .back-link:hover { color: var(--accent); }
         
         .game-page h1 { 
             font-size: 2.8em; 
@@ -48,7 +46,6 @@
             letter-spacing: -0.5px;
         }
         
-        /* Банер гри з ефектною тінню */
         .game-cover { 
             width: 100%; 
             max-width: 900px; 
@@ -62,7 +59,6 @@
             border: 1px solid var(--border);
         }
         
-        /* Контент у вигляді "плаваючої картки" */
         .game-content { 
             max-width: 800px; 
             margin: 0 auto;
@@ -82,9 +78,7 @@
             font-weight: 600;
         }
         
-        .game-content h2:first-child {
-            margin-top: 0;
-        }
+        .game-content h2:first-child { margin-top: 0; }
         
         .game-content p { 
             font-size: 1.1em; 
@@ -118,10 +112,7 @@
             line-height: 1.4;
         }
         
-        .game-content strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
+        .game-content strong { color: var(--text-primary); font-weight: 600; }
         
         .game-links { 
             margin-top: 2.5rem; 
@@ -158,49 +149,26 @@
             text-align: center; 
         }
         
-        .verification img { 
-            margin-bottom: 1rem;
-            border-radius: 6px;
-        }
+        .verification img { margin-bottom: 1rem; border-radius: 6px; }
         
-        .developer-link { 
-            color: var(--text-secondary); 
-            font-size: 0.9em; 
-        }
+        .developer-link { color: var(--text-secondary); font-size: 0.9em; }
+        .developer-link a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .developer-link a:hover { text-decoration: underline; }
         
-        .developer-link a { 
-            color: var(--accent); 
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .developer-link a:hover { 
-            text-decoration: underline; 
-        }
-        
-        /* Темний футер для сторінки гри */
         .game-page .footer {
             background: #0A0A0A;
             margin-top: 4rem;
             border-top: 1px solid var(--border);
         }
 
-        /* Адаптивність для мобільних */
         @media (max-width: 768px) {
-            .game-content {
-                padding: 1.5rem;
-            }
-            .game-page h1 {
-                font-size: 2em;
-            }
-            .game-cover {
-                min-height: 250px;
-            }
+            .game-content { padding: 1.5rem; }
+            .game-page h1 { font-size: 2em; }
+            .game-cover { min-height: 250px; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo">Krayzborn</a>
@@ -210,7 +178,6 @@
                     <li><a href="../index.html#games">Games</a></li>
                     <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
-                <!-- Language Switcher -->
                 <div class="lang-switcher">
                     <a href="wall-bound.html" class="lang-btn active">EN</a>
                     <a href="wall-bound-ua.html" class="lang-btn">UA</a>
@@ -219,7 +186,6 @@
         </div>
     </nav>
 
-    <!-- Game Page Content -->
     <div class="game-page">
         <div class="container">
             <a href="../index.html#games" class="back-link">← Back to Games</a>
@@ -250,12 +216,10 @@
                     <li><strong>Year:</strong> 2026</li>
                 </ul>
                 
-                <h2>Where to Play</h2>
-                <div class="game-links">
-                    <a href="https://pixelpicked.com/game/4l0tJKDpICw/wall-bound-pixel-dash/" class="btn" target="_blank">Play on PixelPicked</a>
+                <div class="game-links" style="justify-content: center; margin-top: 3rem;">
+                    <a href="https://pixelpicked.com/game/4l0tJKDpICw/wall-bound-pixel-dash/" class="btn" target="_blank">View on PixelPicked</a>
                 </div>
                 
-                <!-- PixelPicked Verification Badge -->
                 <div class="verification">
                     <a href="https://pixelpicked.com/game/4l0tJKDpICw/wall-bound-pixel-dash/" target="_blank" rel="noopener">
                         <img src="https://api.pixelpicked.com/api/badges/4l0tJKDpICw/live.png?theme=light" 
@@ -269,11 +233,10 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Yurii Ermishkin. All rights reserved.</p>
-            <p><a href="../privacy-policy.html">Privacy Policy</a></p>
+            <p><a href="https://krayzborn.github.io/privacy-policy/">Privacy Policy</a></p>
         </div>
     </footer>
 </body>
