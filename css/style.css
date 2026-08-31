@@ -125,6 +125,18 @@ a {
     border-bottom: 1px solid var(--border);
 }
 
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+    background-color: var(--bg-card);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+    display: inline-block;
+}
+
 .hero h1 {
     font-size: 3em;
     color: #FFFFFF;
@@ -336,6 +348,11 @@ h2 {
     
     .hero h1 {
         font-size: 2em;
+    }
+    
+    .avatar {
+        width: 140px;
+        height: 140px;
     }
     
     .games-grid {
