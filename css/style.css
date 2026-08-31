@@ -1,0 +1,340 @@
+/* =========================================
+   Переключатель языков (Language Switcher)
+   ========================================= */
+.lang-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.lang-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: all 0.3s;
+    font-size: 0.9em;
+}
+
+.lang-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+.lang-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+/* =========================================
+   Базовые стили (Reset & Base)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   Навигация (Navbar)
+   ========================================= */
+.navbar {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* =========================================
+   Главный экран (Hero)
+   ========================================= */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+    background-color: #ddd; /* Заглушка, если нет фото */
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-btn {
+    color: white;
+    padding: 0.7rem 2rem;
+    border: 2px solid white;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.social-btn:hover {
+    background: white;
+    color: #667eea;
+}
+
+/* =========================================
+   Секции (Sections)
+   ========================================= */
+section {
+    padding: 4rem 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2em;
+    color: #2c3e50;
+}
+
+.about {
+    background: white;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* =========================================
+   Игры (Games Grid)
+   ========================================= */
+.games {
+    background: #f8f9fa;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.game-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    display: block;
+    color: inherit;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.game-banner {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background-color: #eee; /* Заглушка */
+}
+
+.game-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.game-card:hover .game-banner img {
+    transform: scale(1.1);
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.game-card:hover .game-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    font-size: 3em;
+    color: white;
+}
+
+.placeholder-banner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.game-info {
+    padding: 1.5rem;
+}
+
+.game-info h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.4em;
+}
+
+.game-info p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.game-tag {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+.coming-soon .game-tag {
+    background: #95a5a6;
+}
+
+/* =========================================
+   Контакты и Футер (Contact & Footer)
+   ========================================= */
+.contact {
+    background: white;
+    text-align: center;
+}
+
+.contact p {
+    font-size: 1.2em;
+    margin: 1rem 0;
+}
+
+.contact a {
+    color: #3498db;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer a {
+    color: #3498db;
+}
+
+/* =========================================
+   Адаптивность (Мобильные устройства)
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9em;
+    }
+    
+    .hero h1 {
+        font-size: 1.8em;
+    }
+    
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .lang-switcher {
+        top: 10px;
+        right: 10px;
+    }
+}
