@@ -6,24 +6,139 @@
     <title>Wall Bound: Pixel Dash - Krayzborn</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        .game-page { padding: 2rem 0; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: #3498db; text-decoration: none; font-size: 1.1em; }
-        .back-link:hover { text-decoration: underline; }
-        .game-page h1 { font-size: 2.5em; color: #2c3e50; margin-bottom: 1rem; }
-        .game-cover { width: 100%; max-width: 800px; border-radius: 15px; margin-bottom: 2rem; background-color: #ddd; min-height: 400px; }
-        .game-content { max-width: 800px; }
-        .game-content h2 { text-align: left; margin-top: 2rem; margin-bottom: 1rem; color: #2c3e50; }
-        .game-content p { font-size: 1.1em; line-height: 1.8; color: #555; margin-bottom: 1rem; }
-        .game-content ul { list-style-position: inside; font-size: 1.1em; line-height: 1.8; color: #555; margin-left: 1rem; }
-        .game-content li { margin-bottom: 0.5rem; }
-        .game-links { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
-        .btn { display: inline-block; padding: 1rem 2rem; background: #3498db; color: white; text-decoration: none; border-radius: 25px; transition: background 0.3s; font-weight: bold; }
-        .btn:hover { background: #2980b9; }
-        .verification { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd; text-align: center; }
-        .verification img { margin-bottom: 1rem; }
-        .developer-link { color: #666; font-size: 0.9em; }
-        .developer-link a { color: #3498db; text-decoration: none; }
-        .developer-link a:hover { text-decoration: underline; }
+        /* Тёмная тема для страницы игры */
+        .game-page { 
+            padding: 2rem 0; 
+            background: #1a1a2e;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        
+        .back-link { 
+            display: inline-block; 
+            margin-bottom: 2rem; 
+            color: #64b5f6; 
+            text-decoration: none; 
+            font-size: 1.1em; 
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover { 
+            text-decoration: underline; 
+            color: #90caf9;
+        }
+        
+        .game-page h1 { 
+            font-size: 2.5em; 
+            color: #ffffff; 
+            margin-bottom: 1rem; 
+        }
+        
+        .game-cover { 
+            width: 100%; 
+            max-width: 800px; 
+            border-radius: 15px; 
+            margin-bottom: 2rem; 
+            background-color: #2d2d44;
+            min-height: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .game-content { 
+            max-width: 800px; 
+            background: #16213e;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        .game-content h2 { 
+            text-align: left; 
+            margin-top: 2rem; 
+            margin-bottom: 1rem; 
+            color: #64b5f6; 
+        }
+        
+        .game-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .game-content p { 
+            font-size: 1.1em; 
+            line-height: 1.8; 
+            color: #b0b0b0; 
+            margin-bottom: 1rem; 
+        }
+        
+        .game-content ul { 
+            list-style-position: inside; 
+            font-size: 1.1em; 
+            line-height: 1.8; 
+            color: #b0b0b0; 
+            margin-left: 1rem; 
+        }
+        
+        .game-content li { 
+            margin-bottom: 0.5rem; 
+        }
+        
+        .game-content strong {
+            color: #ffffff;
+        }
+        
+        .game-links { 
+            margin-top: 2rem; 
+            display: flex; 
+            gap: 1rem; 
+            flex-wrap: wrap; 
+        }
+        
+        .btn { 
+            display: inline-block; 
+            padding: 1rem 2rem; 
+            background: #64b5f6; 
+            color: #1a1a2e; 
+            text-decoration: none; 
+            border-radius: 25px; 
+            transition: all 0.3s; 
+            font-weight: bold; 
+        }
+        
+        .btn:hover { 
+            background: #90caf9;
+            transform: translateY(-2px);
+        }
+        
+        .verification { 
+            margin-top: 3rem; 
+            padding-top: 2rem; 
+            border-top: 1px solid #2d2d44; 
+            text-align: center; 
+        }
+        
+        .verification img { 
+            margin-bottom: 1rem; 
+        }
+        
+        .developer-link { 
+            color: #888; 
+            font-size: 0.9em; 
+        }
+        
+        .developer-link a { 
+            color: #64b5f6; 
+            text-decoration: none; 
+        }
+        
+        .developer-link a:hover { 
+            text-decoration: underline; 
+        }
+        
+        /* Тёмный футер специально для страницы игры */
+        .game-page .footer {
+            background: #0f0f1e;
+            margin-top: 3rem;
+        }
     </style>
 </head>
 <body>
@@ -65,8 +180,8 @@
                     <li><strong>🔍 Приховані альтернативні шляхи:</strong> Знайдіть секретні маршрути</li>
                     <li><strong>❤️ Додаткові життя:</strong> Подивіться рекламу, щоб продовжити з чекпоінту</li>
                     <li><strong>🎨 Ретро піксельна графіка</strong></li>
-                    <li><strong> Не потрібен акаунт:</strong> Просто завантажте і грайте</li>
-                    <li><strong> 100% безкоштовно:</strong> Ідеально для швидких сесій</li>
+                    <li><strong>⚡ Не потрібен акаунт:</strong> Просто завантажте і грайте</li>
+                    <li><strong>🎮 100% безкоштовно:</strong> Ідеально для швидких сесій</li>
                 </ul>
                 
                 <h2>Технічні деталі</h2>
@@ -82,7 +197,7 @@
                     <a href="https://pixelpicked.com/game/4l0tJKDpICw/wall-bound-pixel-dash/" class="btn" target="_blank">Грати на PixelPicked</a>
                 </div>
                 
-                <!-- PixelPicked Verification Badge -->
+                <!-- PixelPicked Verification Badge (LIGHT theme for dark background) -->
                 <div class="verification">
                     <a href="https://pixelpicked.com/game/4l0tJKDpICw/wall-bound-pixel-dash/" target="_blank" rel="noopener">
                         <img src="https://api.pixelpicked.com/api/badges/4l0tJKDpICw/live.png?theme=light" 
