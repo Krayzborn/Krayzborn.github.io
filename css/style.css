@@ -1,40 +1,5 @@
 /* =========================================
-   Переключатель языков (Language Switcher)
-   ========================================= */
-.lang-switcher {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 25px;
-    padding: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-.lang-btn {
-    display: inline-block;
-    padding: 8px 16px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    border-radius: 20px;
-    transition: all 0.3s;
-    font-size: 0.9em;
-}
-
-.lang-btn:hover {
-    background: #667eea;
-    color: white;
-}
-
-.lang-btn.active {
-    background: #667eea;
-    color: white;
-}
-
-/* =========================================
-   Базовые стили (Reset & Base)
+   1. Базовые стили и сброс (Reset & Base)
    ========================================= */
 * {
     margin: 0;
@@ -61,7 +26,7 @@ a {
 }
 
 /* =========================================
-   Навигация (Navbar)
+   2. Навигация и Переключатель языков (Navbar)
    ========================================= */
 .navbar {
     background: #2c3e50;
@@ -69,7 +34,7 @@ a {
     padding: 1rem 0;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
@@ -85,6 +50,13 @@ a {
     font-weight: bold;
 }
 
+/* Обертка для ссылок и переключателя, чтобы они были справа */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -94,14 +66,44 @@ a {
 .nav-links a {
     color: white;
     transition: color 0.3s;
+    font-weight: 500;
 }
 
 .nav-links a:hover {
     color: #3498db;
 }
 
+/* Переключатель языков внутри навбара */
+.lang-switcher {
+    display: flex;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 4px;
+}
+
+.lang-btn {
+    padding: 6px 14px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    border-radius: 16px;
+    transition: all 0.3s;
+    font-size: 0.85em;
+    cursor: pointer;
+}
+
+.lang-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lang-btn.active {
+    background: white;
+    color: #2c3e50;
+}
+
 /* =========================================
-   Главный экран (Hero)
+   3. Главный экран (Hero)
    ========================================= */
 .hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -117,7 +119,7 @@ a {
     border: 5px solid white;
     margin-bottom: 1.5rem;
     object-fit: cover;
-    background-color: #ddd; /* Заглушка, если нет фото */
+    background-color: #ddd; /* Заглушка, пока нет фото */
 }
 
 .hero h1 {
@@ -151,7 +153,7 @@ a {
 }
 
 /* =========================================
-   Секции (Sections)
+   4. Секции (Sections)
    ========================================= */
 section {
     padding: 4rem 0;
@@ -177,7 +179,7 @@ h2 {
 }
 
 /* =========================================
-   Игры (Games Grid)
+   5. Игры (Games Grid)
    ========================================= */
 .games {
     background: #f8f9fa;
@@ -285,7 +287,7 @@ h2 {
 }
 
 /* =========================================
-   Контакты и Футер (Contact & Footer)
+   6. Контакты и Футер (Contact & Footer)
    ========================================= */
 .contact {
     background: white;
@@ -316,13 +318,29 @@ h2 {
     color: #3498db;
 }
 
+.footer a:hover {
+    text-decoration: underline;
+}
+
 /* =========================================
-   Адаптивность (Мобильные устройства)
+   7. Адаптивность (Мобильные устройства)
    ========================================= */
 @media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-right {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     .nav-links {
         gap: 1rem;
         font-size: 0.9em;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .hero h1 {
@@ -331,10 +349,5 @@ h2 {
     
     .games-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .lang-switcher {
-        top: 10px;
-        right: 10px;
     }
 }
